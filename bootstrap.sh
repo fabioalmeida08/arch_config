@@ -55,14 +55,14 @@ grub-install --target=x86_64-efi --efi-directory=${efi_dir} --bootloader-id=GRUB
 echo "Creating grub config..."
 grub-mkconfig -o /boot/grub/grub.cfg
 
-echo "Root password :"
+echo "Root password"
 passwd
 
 read -p "Username :" username
 
 useradd -m -G wheel -s /bin/bash $username
 
-echo "User password :"
+echo "User password"
 passwd $username
 
 echo "%wheel ALL=(ALL:ALL) ALL" >> /etc/sudoers
