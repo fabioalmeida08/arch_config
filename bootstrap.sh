@@ -47,10 +47,12 @@ grub_file="/etc/default/grub"
 updated_grub_cmd="GRUB_CMDLINE_LINUX_DEFAULT=\"loglevel=3 quiet cryptdevice=UUID=${luks_container_uuid}:cryptlvm root=UUID=${root_uuid}\""
 sed -i "s/^GRUB_CMDLINE_LINUX_DEFAULT=.*/${updated_grub_cmd}/" "$grub_file"
 
+cat /etc/defaul/grub
+
 read -p "efi directory :" efi_dir
-echo "installing grub"
+echo "Installing grub..."
 grub-install --target=x86_64-efi --efi-directory=${efi_dir} --bootloader-id=GRUB
-echo "creating grub config"
+echo "Creating grub config..."
 grub-mkconfig -o /boot/grub/grub.cfg
 
 echo "Root password :"
