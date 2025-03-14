@@ -1,10 +1,4 @@
 #!/bin/bash
-pacstrap /mnt base base-devel linux linux-firmware linux-headers vim networkmanager	amd-ucode lvm2 grub efibootmgr cryptsetup
-
-genfstab -U /mnt >> /mnt/etc/fstab
-cat /mnt/etc/fstab
-
-arch-chroot /mnt
 
 ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 hwclock --systohc
