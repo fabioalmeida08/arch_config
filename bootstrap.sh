@@ -47,7 +47,7 @@ grub_file="/etc/default/grub"
 updated_grub_cmd="GRUB_CMDLINE_LINUX_DEFAULT=\"loglevel=3 quiet cryptdevice=UUID=${luks_container_uuid}:cryptlvm root=UUID=${root_uuid}\""
 sed -i "s/^GRUB_CMDLINE_LINUX_DEFAULT=.*/${updated_grub_cmd}/" "$grub_file"
 
-cat /etc/defaul/grub
+cat /etc/default/grub
 
 read -p "efi directory :" efi_dir
 echo "Installing grub..."
