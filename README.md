@@ -1,4 +1,4 @@
-# arch_automate
+# Arch Config
 
 Este projeto automatiza a configuração inicial de um sistema Arch Linux. O script `bootstrap.sh` realiza as seguintes tarefas:
 
